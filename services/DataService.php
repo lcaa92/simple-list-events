@@ -45,7 +45,7 @@ class DataService
      * @param int|null $id Optional event index.
      * @return array|mixed Returns all events if $id is null, otherwise returns the event at the given index or null if event does not exist;
      */
-    public function getEvents($id = null)
+    public function getEvents(int $id = null): array|null
     {
         if(!isset($id)){
             return $this->events;

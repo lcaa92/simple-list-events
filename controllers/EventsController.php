@@ -7,7 +7,7 @@ use services\DataService;
 class EventsController
 {
 
-    public function index($id = null)
+    public function index(int $id = null)
     {
         $srv = new DataService();
         $event = $srv->getEvents($id);
