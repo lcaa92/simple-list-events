@@ -34,7 +34,7 @@ class DataService
             $this->events[] = [
                 'event_name'=> $line[0],
                 'location' => $line[1],
-                'address' => $line[2]
+                'address' => sprintf('%s %s', $line[2], $line[3])
             ];
         }
     }
