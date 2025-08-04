@@ -1,5 +1,8 @@
 <?php
 
+use responses\Response;
+use responses\ErrorResponse;
+
 // A simple PSR-4-like autoloader
 spl_autoload_register(function ($class) {
     // Define the base directory for the namespace
@@ -32,15 +35,17 @@ function dispatch($routes) {
             // The class name is now fully qualified
             if (class_exists($controllerClass) && method_exists(new $controllerClass, $actionMethod)) {
                 $controllerInstance = new $controllerClass();
-                $controllerInstance->$actionMethod(...$query);
+                $response = $controllerInstance->$actionMethod(...$query);
+
+                if ($response instanceof Response) {
+                    $response->send();
+                }
                 return;
             }
         }
     }
 
-    // Handle 404 Not Found
-    header("HTTP/1.0 404 Not Found");
-    echo "404 - Page Not Found";
+    return (new ErrorResponse("Page Not Found", 404))->send();
 }
 
 // Include our routes file

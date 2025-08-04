@@ -3,19 +3,20 @@
 namespace controllers;
 
 use services\DataService;
+use responses\Response;
+use responses\SuccessResponse;
+use responses\ErrorResponse;
 
 class EventsController
 {
 
-    public function index(int $id = null)
+    public function index(int $id = null): Response
     {
         $srv = new DataService();
         $event = $srv->getEvents($id);
         if(!isset($event)){
-            header("HTTP/1.0 404 Not Found");
-            echo "404 - Event Not Found";
-            return;
+            return new ErrorResponse("Event Not Found", 404);
         }
-        echo json_encode($event);
+        return new SuccessResponse(json_encode($event));
     }
 }
