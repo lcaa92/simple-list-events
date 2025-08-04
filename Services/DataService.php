@@ -9,6 +9,7 @@ namespace Services;
  */
 class DataService
 {
+    protected string $csvFile;
     /**
      * @var array $events Array of events loaded from CSV.
      */
@@ -18,7 +19,8 @@ class DataService
      * DataService constructor.
      * Loads events from the CSV file on instantiation.
      */
-    function __construct() {
+    function __construct(string $csvFile = 'seeds.csv') {
+        $this->csvFile = $csvFile;
         $this->loadEvents();
     }
 
@@ -29,7 +31,7 @@ class DataService
      */
     protected function loadEvents()
     {
-        $file = fopen('seeds.csv', 'r');
+        $file = fopen($this->csvFile, 'r');
         while (($line = fgetcsv($file)) !== FALSE) {
             $this->events[] = [
                 'event_name'=> $line[0],
