@@ -7,9 +7,15 @@ use services\DataService;
 class EventsController
 {
 
-    public function index()
+    public function index($id = null)
     {
         $srv = new DataService();
-        echo json_encode($srv->getEvents());
+        $event = $srv->getEvents($id);
+        if(!isset($event)){
+            header("HTTP/1.0 404 Not Found");
+            echo "404 - Event Not Found";
+            return;
+        }
+        echo json_encode($event);
     }
 }

@@ -43,8 +43,7 @@ class DataService
      * Retrieves all events or a specific event by ID.
      *
      * @param int|null $id Optional event index.
-     * @return array|mixed Returns all events if $id is null, otherwise returns the event at the given index.
-     * @throws \OutOfBoundsException If the provided ID does not exist in the events array.
+     * @return array|mixed Returns all events if $id is null, otherwise returns the event at the given index or null if event does not exist;
      */
     public function getEvents($id = null)
     {
@@ -52,6 +51,6 @@ class DataService
             return $this->events;
         }
 
-        return $this->events[$id];
+        return $this->events[$id - 1];
     }
 }
