@@ -2,12 +2,14 @@
 
 namespace controllers;
 
+use services\DataService;
+
 class EventsController
 {
 
     public function index()
     {
-        header("HTTP/1.0 501 Not Implemented");
-        echo "501 - Not Implemented";
+        $srv = new DataService();
+        echo json_encode($srv->getEvents());
     }
 }
