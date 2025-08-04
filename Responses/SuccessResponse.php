@@ -1,6 +1,6 @@
 <?php
 
-namespace responses;
+namespace Responses;
 
 class SuccessResponse extends Response
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace controllers;
+namespace Controllers;
 
-use responses\SuccessResponse;
+use Responses\SuccessResponse;
 
 class HomeController
 {

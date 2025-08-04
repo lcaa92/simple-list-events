@@ -1,7 +1,7 @@
 <?php
 
-use responses\Response;
-use responses\ErrorResponse;
+use Responses\Response;
+use Responses\ErrorResponse;
 use Routes\Router;
 use Routes\Exceptions\RouterException;
 
@@ -23,7 +23,7 @@ $router = new Router();
 
 try {
     // Dispatch the request using the router.
-    $response = $router->dispatch($uri, $method);
+    $response = $router->dispatch();
 
     // Send the response back to the client.
     if ($response instanceof Response) {
@@ -38,4 +38,3 @@ try {
     $internalErrorResponse = new ErrorResponse("500 - Internal Server Error", 500);
     $internalErrorResponse->send();
 }
-$router->dispatch();

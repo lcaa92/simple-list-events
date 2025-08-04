@@ -2,7 +2,7 @@
 
 namespace Routes;
 
-use responses\Response;
+use Responses\Response;
 use Routes\Exceptions\RouterException;
 
 /**
@@ -35,11 +35,11 @@ class Router
     {
         $this->routes = [
             'GET' => [
-                '' => 'controllers\HomeController@index',
-                'address' => 'controllers\EventsController@index',
+                '' => 'Controllers\HomeController@index',
+                'address' => 'Controllers\EventsController@index',
             ],
             'POST' => [
-                '' => 'controllers\HomeController@index',
+                '' => 'Controllers\HomeController@index',
             ]
         ];
     }
