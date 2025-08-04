@@ -20,7 +20,9 @@ function dispatch($routes) {
     $method = $_SERVER['REQUEST_METHOD'];
 
     $query = array();
-    parse_str($_SERVER['QUERY_STRING'], $query);
+    if(isset($_SERVER['QUERY_STRING'])){
+        parse_str($_SERVER['QUERY_STRING'], $query);
+    }
 
     foreach ($routes as $route => $action) {
         if ($route === $uri) {
