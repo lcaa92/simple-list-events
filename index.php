@@ -19,6 +19,9 @@ function dispatch($routes) {
     $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
     $method = $_SERVER['REQUEST_METHOD'];
 
+    $query = array();
+    parse_str($_SERVER['QUERY_STRING'], $query);
+
     foreach ($routes as $route => $action) {
         if ($route === $uri) {
             // The action string now includes the full namespaced class name
@@ -27,7 +30,7 @@ function dispatch($routes) {
             // The class name is now fully qualified
             if (class_exists($controllerClass) && method_exists(new $controllerClass, $actionMethod)) {
                 $controllerInstance = new $controllerClass();
-                $controllerInstance->$actionMethod();
+                $controllerInstance->$actionMethod(...$query);
                 return;
             }
         }
