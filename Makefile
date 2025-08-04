@@ -7,3 +7,6 @@ run: # Start server
 
 tests: # Run PHPUnit tests
 	./vendor/bin/phpunit tests
+
+install_dependencies: # Install composer dependencies
+	composer install
