@@ -1,9 +1,9 @@
 <?php
 
-use Responses\Response;
-use Responses\ErrorResponse;
-use Routes\Router;
-use Routes\Exceptions\RouterException;
+use App\Responses\Response;
+use App\Responses\ErrorResponse;
+use App\Routes\Router;
+use App\Routes\Exceptions\RouterException;
 
 // A simple PSR-4-like autoloader
 spl_autoload_register(function ($class) {

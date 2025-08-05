@@ -1,11 +1,11 @@
 <?php
 
-namespace Controllers;
+namespace App\Controllers;
 
-use Services\DataService;
-use Responses\Response;
-use Responses\SuccessResponse;
-use Responses\ErrorResponse;
+use App\Services\DataService;
+use App\Responses\Response;
+use App\Responses\SuccessResponse;
+use App\Responses\ErrorResponse;
 
 class EventsController
 {

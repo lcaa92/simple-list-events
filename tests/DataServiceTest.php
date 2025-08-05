@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Services\DataService;
+use App\Services\DataService;
 
 class DataServiceTest extends TestCase
 {

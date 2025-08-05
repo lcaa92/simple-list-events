@@ -1,9 +1,9 @@
 <?php
 
-namespace Routes;
+namespace App\Routes;
 
-use Responses\Response;
-use Routes\Exceptions\RouterException;
+use App\Responses\Response;
+use App\Routes\Exceptions\RouterException;
 
 /**
  * The Router class handles route registration and dispatching, now with CORS support.
@@ -35,11 +35,11 @@ class Router
     {
         $this->routes = [
             'GET' => [
-                '' => 'Controllers\HomeController@index',
-                'address' => 'Controllers\EventsController@index',
+                '' => 'App\Controllers\HomeController@index',
+                'address' => 'App\Controllers\EventsController@index',
             ],
             'POST' => [
-                '' => 'Controllers\HomeController@index',
+                '' => 'App\Controllers\HomeController@index',
             ]
         ];
     }

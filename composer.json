@@ -2,10 +2,7 @@
     "name": "leandro/simple-list-events",
     "autoload": {
         "psr-4": {
-            "Leandro\\SimpleListEvents\\": "./",
-            "Controllers\\": "Controllers/",
-            "Services\\": "Services/",
-            "Responses\\": "Responses/"
+            "App\\": "./App/"
         }
     },
     "authors": [
