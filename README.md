@@ -11,4 +11,9 @@
 
 ### How to run
 
-- php -S 0.0.0.0:8000
+- php -S 0.0.0.0:8000 -t public
+
+
+### Makefile
+
+In this repo, there is a  `Makefile` with some utils commands
