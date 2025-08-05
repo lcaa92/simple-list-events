@@ -1,6 +1,6 @@
 <?php
 
-namespace Services;
+namespace App\Services;
 
 /**
  * Class DataService
@@ -19,7 +19,7 @@ class DataService
      * DataService constructor.
      * Loads events from the CSV file on instantiation.
      */
-    function __construct(string $csvFile = 'seeds.csv') {
+    function __construct(string $csvFile = __DIR__ . '/' . 'seeds.csv') {
         $this->csvFile = $csvFile;
         $this->loadEvents();
     }

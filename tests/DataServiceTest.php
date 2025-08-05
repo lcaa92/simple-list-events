@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Services\DataService;
+use App\Services\DataService;
 
 class DataServiceTest extends TestCase
 {
@@ -42,7 +42,7 @@ class DataServiceTest extends TestCase
 
     public function testEmptyCsvReturnsEmptyArray()
     {
-        $fileNameTest = 'seeds_test.csv';
+        $fileNameTest = __DIR__ . '/' . 'seeds_test.csv';
         file_put_contents($fileNameTest, '');
         $service = new DataService(
             csvFile: $fileNameTest

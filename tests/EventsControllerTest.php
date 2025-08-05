@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Controllers\EventsController;
-use Responses\SuccessResponse;
+use App\Controllers\EventsController;
+use App\Responses\SuccessResponse;
 
 class EventsControllerTest extends TestCase
 {
