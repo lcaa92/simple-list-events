@@ -8,21 +8,6 @@ use App\Routes\Exceptions\RouterException;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-
-// A simple PSR-4-like autoloader
-// spl_autoload_register(function ($class) {
-//     // Define the base directory for the namespace
-//     $baseDir = __DIR__ . '/';
-
-//     // Replace the namespace separator with the directory separator
-//     $file = $baseDir . str_replace('\\', '/', $class) . '.php';
-
-//     // If the file exists, include it
-//     if (file_exists($file)) {
-//         require_once $file;
-//     }
-// });
-
 $router = new Router();
 
 try {
