@@ -2,7 +2,7 @@
     "name": "leandro/simple-list-events",
     "autoload": {
         "psr-4": {
-            "App\\": "./App/"
+            "App\\": "./app/"
         }
     },
     "authors": [
